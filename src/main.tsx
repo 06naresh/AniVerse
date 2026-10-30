@@ -2,15 +2,18 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './app/App.tsx'
+import { ThemeProvider } from './context/ThemeContext.tsx';
 
 const rootElement = document.getElementById("root");
 
-if(!rootElement) {
+if (!rootElement) {
   throw new Error("Root element was not found in index.html");
 }
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </StrictMode>,
 )

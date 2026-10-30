@@ -8,7 +8,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-optical-sizing: auto;
 }
 
 *{
@@ -24,12 +23,26 @@ body,
   margin: 0;
 }
 
+html {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+html.dark {
+  background: #080d20;
+  color: #f8fafc;
+}
+
 body{
   min-height: 100dvh;
+  background: inherit;
+  color: inherit;
+  transition: background-color 180ms ease, color 180ms ease;
 }
 
 button,
-input {
+input,
+textarea {
   font: inherit;
 }
 
@@ -38,7 +51,8 @@ button{
 }
 
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid #a78bfa;
   outline-offset: 3px;
 }
@@ -46,4 +60,9 @@ input:focus-visible {
 img {
   display: block;
   max-width: 100%;
+}
+
+::selection {
+  background: #8b5cf6;
+  color: #ffffff;
 }
